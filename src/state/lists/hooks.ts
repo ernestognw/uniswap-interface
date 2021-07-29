@@ -118,7 +118,7 @@ export function useCombinedActiveList(): TokenAddressMap {
 // list of tokens not supported on interface, used to show warnings and prevent swaps and adds
 export function useUnsupportedTokenList(): TokenAddressMap {
   // get hard coded unsupported tokens, only block on app url
-  const localUnsupportedListMap = useMemo(() => (IS_ON_APP_URL ? listToTokenMap(UNSUPPORTED_TOKEN_LIST) : {}), [])
+  const localUnsupportedListMap = useMemo(() => listToTokenMap(UNSUPPORTED_TOKEN_LIST), [])
 
   // broken tokens, blocked on all URLS
   const brokenListMap = useMemo(() => listToTokenMap(BROKEN_LIST), [])
